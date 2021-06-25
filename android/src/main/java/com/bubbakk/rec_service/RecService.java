@@ -214,7 +214,7 @@ public class RecService extends Service {
 
         filename = prefix != null && !prefix.isEmpty()
             ? chunkSize > 0
-                ? chunksFilePath + "/" + prefix + "-" + String.format("%04d", chunkNum) + ".wav"          // four digits decimal max = 9999 = 10.000 chunks = ~6 days, one slice per minute
+                ? chunksFilePath + "/" + prefix + "~" + String.format("%04d", chunkNum) + ".wav"          // four digits decimal max = 9999 = 10.000 chunks = ~6 days, one slice per minute
                 : chunksFilePath + "/" + prefix + ".wav"
             : chunksFilePath + "/record.wav";
 
@@ -278,7 +278,7 @@ public class RecService extends Service {
 
                             filename = prefix != null && !prefix.isEmpty()
                                     ? chunkSize > 0
-                                    ? chunksFilePath + "/" + prefix + "-" + String.format("%04d", chunkNum) + ".wav"
+                                    ? chunksFilePath + "/" + prefix + "~" + String.format("%04d", chunkNum) + ".wav"
                                     : chunksFilePath + "/" + prefix + ".wav"
                                     : chunksFilePath + "/record.wav";
 
